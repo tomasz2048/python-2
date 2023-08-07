@@ -1,15 +1,11 @@
-import time
 import logging
 import requests
 
 from pytz import utc
 from datetime import datetime
 from apscheduler.executors.pool import ThreadPoolExecutor, ProcessPoolExecutor
-from apscheduler.jobstores.memory import MemoryJobStore
-from apscheduler.schedulers.background import BackgroundScheduler
-from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
 from apscheduler.schedulers.blocking import BlockingScheduler
-from apscheduler.triggers.cron import CronTrigger
+
 
 # volatile scheduler blocking - does not need any other thread to continue running
 # job gets defined in the code, no persistence
